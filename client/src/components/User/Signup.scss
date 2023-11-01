@@ -1,0 +1,49 @@
+.main-login {
+    background-color: rgba(223, 223, 223, 0.363);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+h2{
+    font-size: 50px;
+}
+
+
+p{
+    color: black;
+}
+.text-center{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.text-field{
+    padding: 10px;
+    margin: 2px;
+    border: none;
+    background-color: white;
+    color: black;
+}
+
+.form-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.btn{
+    background-color: white;
+    margin: 5px;
+    color: black;
+    align-items: center;
+    justify-content: center;
+}
+
+.link {
+    color: black;
+    margin: 5px;
+}
