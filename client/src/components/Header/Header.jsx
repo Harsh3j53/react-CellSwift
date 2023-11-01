@@ -14,12 +14,20 @@ const Header = () => {
   const [ShowSearch, setShowSearch] = useState(false);
   const {cartCount} = useContext(Context);
   const navigate = useNavigate();
+  const categoriesRef = useRef(null); 
   const handleScroll = () => {
     const offset = window.scrollY;
     if (offset > 200) {
       setScrolled(true);
     } else {
       setScrolled(false);
+    }
+  };
+
+  const handleCategoriesClick = () => {
+    // Scroll to the Categories section
+    if (categoriesRef.current) {
+      categoriesRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -34,7 +42,7 @@ const Header = () => {
           <ul className="left">
             <li onClick={() => navigate("/")}>Home</li>
             <li>About</li>
-            <li>Categories</li>
+            <li onClick={handleCategoriesClick}>Categories</li>
           </ul>
           <div className="center" onClick={() => navigate("/")}>
             <img src="./assests/logo.png" alt="CellSwift." />
