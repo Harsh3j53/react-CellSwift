@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { TbSearch } from "react-icons/tb";
 import { CgShoppingCart } from "react-icons/cg";
@@ -42,7 +42,7 @@ const Header = () => {
           <ul className="left">
             <li onClick={() => navigate("/")}>Home</li>
             <li>About</li>
-            <li onClick={handleCategoriesClick}>Categories</li>
+            <li onClick={() => navigate("/Category/:id")}>Categories</li>
           </ul>
           <div className="center" onClick={() => navigate("/")}>
             <img src="./assests/logo.png" alt="CellSwift." />
