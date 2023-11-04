@@ -1,5 +1,5 @@
 import "./Banner.scss";
-import BannerImg from "../../../assets/banner-img.png";
+import BannerImg from "../../../assets/banner.png";
 const Banner = () => {
   return (
     <div className="hero-banner">

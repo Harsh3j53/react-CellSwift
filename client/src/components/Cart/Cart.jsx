@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { Context } from "../../utils/context";
 
 const Cart = ({setShowCart}) => {
-  const {cartItems, cartSubTotal} = useContext(Context)
+  const {cartItems, cartSubTotal} = useContext(Context);
   return (
     <div className="cart-panel">
       <div className="opac-layer"></div>
@@ -23,7 +23,7 @@ const Cart = ({setShowCart}) => {
         {!cartItems?.length && <div className="empty-cart">
             < BsCartX/>
             <span>No Products in the cart</span>
-            <button className="return-cta">Return to Shop</button>
+            <button className="return-cta" onClick={() => setShowCart(false)}>Return to Shop</button>
         </div>}
 
         {!!cartItems?.length && <>
