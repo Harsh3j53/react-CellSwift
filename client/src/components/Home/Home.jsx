@@ -35,7 +35,7 @@ const Home = () => {
         <Banner/>
         <div className="main-content">
             <div className="layout">
-            <Category categories={categories} />
+            <Category categories={categories} headingText="Categories"/>
             <Products products={products} headingText="Popular Products"/>
             </div>
         </div>
