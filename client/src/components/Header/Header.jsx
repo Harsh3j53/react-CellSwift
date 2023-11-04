@@ -41,8 +41,9 @@ const Header = () => {
         <div className="header-content">
           <ul className="left">
             <li onClick={() => navigate("/")}>Home</li>
-            <li>About</li>
             <li onClick={() => navigate("/Category/:id")}>Categories</li>
+            <li>Sign up</li>
+            <li>About</li>
           </ul>
           <div className="center" onClick={() => navigate("/")}>
             <img src="./assests/logo.png" alt="CellSwift." />
