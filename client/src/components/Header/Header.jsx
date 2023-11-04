@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext, useRef } from "react";
+import { useEffect, useState, useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import { TbSearch } from "react-icons/tb";
 import { CgShoppingCart } from "react-icons/cg";
@@ -8,13 +8,12 @@ import Cart from "../Cart/Cart";
 import { Context } from "../../utils/context";
 import "./Header.scss";
 
-const Header = () => {
+const Header = (props) => {
   const [scrolled, setScrolled] = useState(false);
   const [ShowCart, setShowCart] = useState(false);
   const [ShowSearch, setShowSearch] = useState(false);
   const {cartCount} = useContext(Context);
   const navigate = useNavigate();
-  const categoriesRef = useRef(null); 
   const handleScroll = () => {
     const offset = window.scrollY;
     if (offset > 200) {
@@ -24,12 +23,7 @@ const Header = () => {
     }
   };
 
-  const handleCategoriesClick = () => {
-    // Scroll to the Categories section
-    if (categoriesRef.current) {
-      categoriesRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -41,8 +35,8 @@ const Header = () => {
         <div className="header-content">
           <ul className="left">
             <li onClick={() => navigate("/")}>Home</li>
-            <li onClick={() => navigate("/Category/:id")}>Categories</li>
-            <li>Sign up</li>
+            <li >Categories</li>
+            <li onClick={() => navigate("/Login")}>{props.name ? `${props.name}` : "Login/Signup"}</li>
             <li>About</li>
           </ul>
           <div className="center" onClick={() => navigate("/")}>
