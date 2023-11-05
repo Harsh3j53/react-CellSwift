@@ -23,6 +23,13 @@ const Header = (props) => {
     }
   };
 
+  const scrollToCategory = (category) => {
+    const element = document.getElementById(category);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
 
 
   useEffect(() => {
@@ -35,7 +42,7 @@ const Header = (props) => {
         <div className="header-content">
           <ul className="left">
             <li onClick={() => navigate("/")}>Home</li>
-            <li >Categories</li>
+            <li onClick={() => scrollToCategory('category')}>Categories</li>
             <li onClick={() => navigate("/Login")}>{props.name ? `${props.name}` : "Login/Signup"}</li>
             <li>About</li>
           </ul>

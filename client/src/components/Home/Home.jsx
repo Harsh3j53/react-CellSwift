@@ -8,7 +8,7 @@ import {fetchDataFromApi} from "../../utils/api";
 import { Context } from "../../utils/context";
 
 
-const Home = () => {
+const Home = (props) => {
 
     const{  categories, setCategories, products, setProducts } = useContext(Context);
 
@@ -33,10 +33,13 @@ const Home = () => {
 
     return (
     <div>
+        <h1 id="user">{props.name ? `Welcome - ${props.name}` : "Login please"}</h1>
         <Banner/>
         <div className="main-content">
             <div className="layout">
-            <Category categories={categories} headingText="Categories"/>
+            <section id="category">
+                <Category categories={categories} headingText="Categories"/>
+            </section>
             <Products products={products} headingText="Popular Products"/>
             </div>
         </div>
